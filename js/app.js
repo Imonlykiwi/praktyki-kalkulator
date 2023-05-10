@@ -5,14 +5,17 @@ const result = document.querySelector('#display');
 
 function calc() {
     const btnValue = this.innerText;
-    if(btnValue === 'C') {
-        result.value = '';
-    } else if (btnValue === '=') {
-        result.value = eval(result.value)
-    } else {
-        result.value += btnValue;
+    switch (btnValue) {
+        case 'C':
+            result.value = '';
+            break;
+        case '=':
+            result.value = eval(result.value)
+            break
+        default:
+            result.value += btnValue;
+            break;
     }
-
 }
 
 btns.forEach(elemnt => {
